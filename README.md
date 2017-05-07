@@ -7,7 +7,7 @@ This module contains 3 things
 
 * **database seeding script:** a simple script that inserts some base objects into mongo
 * **e2e tests:** codecept/nightmare acceptance tests
-* **docker-compose:** all the configuration needed to run the tests starting: mongo, frontend, backend; running the db seeding script and then running the e2e tests.
+* **docker-compose:** all the configuration needed to run the tests starting: mongo, [frontend](https://github.com/javierfernandes/docker-e2e-frontend), [backend](https://github.com/javierfernandes/docker-e2e-backend); running the db seeding script and then running the e2e tests.
 
 ## How to run
 

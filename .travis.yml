@@ -8,3 +8,10 @@ before_install:
 
 script:
   - docker-compose run tests
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker build -t jfernandes/e2e-tests:$TRAVIS_BUILD_NUMBER .; 
+    docker login --username="$DOCKER_USERNAME" --password="$DOCKER_PASSWORD";
+    docker push jfernandes/e2e-tests:$TRAVIS_BUILD_NUMBER;
+    fi

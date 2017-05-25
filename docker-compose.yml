@@ -5,7 +5,7 @@ mongo:
     - "27018:27017"
   command: "--smallfiles --logpath=/dev/null"
 backend:
-  build: 'https://github.com/javierfernandes/docker-e2e-backend.git#master'
+  build: 'https://github.com/javierfernandes/docker-e2e-backend.git#${BACKEND_BRANCH}'
   ports:
     - "3001:3001"
   links:
@@ -13,7 +13,7 @@ backend:
   environment: 
     MONGO_URL: 'mongodb://mongo/docker-e2e'
 frontend:
-  build: 'https://github.com/javierfernandes/docker-e2e-frontend.git#master'
+  build: 'https://github.com/javierfernandes/docker-e2e-frontend.git#${FRONTEND_BRANCH}'
   ports:
     - "3000:3000"
   links:

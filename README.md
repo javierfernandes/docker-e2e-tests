@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/javierfernandes/docker-e2e-tests.svg?branch=master)](https://travis-ci.org/javierfernandes/docker-e2e-tests)
+
 # docker-e2e-tests
 Integration tests project for the [Docker E2E tutorial](https://www.gitbook.com/book/javierfernandes/e2e-testing-with-docker)
 

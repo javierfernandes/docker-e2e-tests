@@ -1,9 +1,11 @@
+
 mongo:
   image: mongo
   ports:
     - "27018:27017"
   command: "--smallfiles --logpath=/dev/null"
 backend:
+  dns: 8.8.8.8
   build: 'https://github.com/javierfernandes/docker-e2e-backend.git#master'
   ports:
     - "3001:3001"
@@ -12,6 +14,7 @@ backend:
   environment: 
     MONGO_URL: 'mongodb://mongo/docker-e2e'
 frontend:
+  dns: 8.8.8.8
   build: 'https://github.com/javierfernandes/docker-e2e-frontend.git#master'
   ports:
     - "3000:3000"
@@ -20,6 +23,7 @@ frontend:
   environment: 
     BACKEND_URL: 'http://backend:3001/'
 tests:
+  dns: 8.8.8.8
   build: .
   links:
     - frontend

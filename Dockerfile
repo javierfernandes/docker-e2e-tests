@@ -14,13 +14,9 @@ RUN export DISPLAY=:9.0
 
 RUN mkdir /app
 COPY . /app
+RUN rm -rf /app/node_modules
 
 WORKDIR /app
 RUN yarn
-
-# fix nightmare not found :(
-RUN npm rebuild
-
-# RUN npm rebuild
 
 CMD yarn test-docker
